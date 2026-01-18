@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
     return (
@@ -31,9 +32,11 @@ const Hero = () => {
 
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-24">
-                <button className="bg-black text-white px-10 py-4 rounded-xl font-light text-lg cursor-pointer active:scale-95 ">
-                    Try NoteSpark AI
-                </button>
+                <Link to="/auth">
+                    <button className="bg-black text-white px-10 py-4 rounded-xl font-light text-lg cursor-pointer active:scale-95 ">
+                        Try NoteSpark AI
+                    </button>
+                </Link>
             </div>
         </>
     )

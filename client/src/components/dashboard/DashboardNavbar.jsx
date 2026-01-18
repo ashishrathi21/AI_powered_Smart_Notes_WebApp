@@ -64,7 +64,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Upgrade Button */}
-                <button className="cursor-pointer hidden lg:block text-sm font-normal text-[#0b57d0] hover:bg-blue-50 px-4 py-2 rounded-lg transition-colors">
+                <button className="cursor-pointer hidden lg:block text-sm font-medium bg-gradient-to-r from-[#0ae89e] via-[#3b82f6] to-[#0ae89e] bg-clip-text text-transparent hover:bg-blue-50 px-4 py-2 rounded-lg transition-colors">
                     Upgrade
                 </button>
 

@@ -69,10 +69,10 @@ const Notescard = () => {
 
                         {/* 5) Quick Actions (Icons) */}
                         <div className="flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <button className="p-2 hover:bg-gray-100 rounded-full text-gray-600 transition-colors" title="Edit Note">
+                            <button className="p-2 hover:bg-gray-100 rounded-full text-gray-600 transition-colors cursor-pointer" title="Edit Note ">
                                 <PiPencilSimpleLight className="text-lg" />
                             </button>
-                            <button className="p-2 hover:bg-red-50 rounded-full text-gray-400 hover:text-red-500 transition-colors" title="Delete">
+                            <button className="p-2 hover:bg-red-50 rounded-full text-gray-400 hover:text-red-500 transition-colors cursor-pointer" title="Delete">
                                 <PiTrashLight className="text-lg" />
                             </button>
                         </div>
