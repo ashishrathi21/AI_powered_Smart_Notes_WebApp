@@ -1,5 +1,7 @@
 import React from 'react'
 import logo from '../../../public/assets/logo.png'
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../../context/AuthContext'
 import {
     PiMagnifyingGlassLight,
     PiPlusBold,
@@ -14,6 +16,16 @@ import {
 } from "react-icons/pi";
 
 const Navbar = () => {
+
+    const {user, logout} = useAuth();
+    const navigate = useNavigate();
+    console.log(user);
+
+    const handleLogout = () => {
+        logout();
+        navigate('/');
+    }
+
     return (
         <nav className="flex justify-between items-center px-16 py-5 border-b border-gray-100 bg-white sticky top-0 z-50">
 
@@ -83,12 +95,12 @@ const Navbar = () => {
                 {/* Profile Avatar & Dropdown */}
                 <div className="relative group">
                     <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-50 to-blue-100 border border-blue-200 flex items-center justify-center cursor-pointer hover:shadow-md transition-all">
-                        <span className="text-[#0b57d0] font-bold text-xs">AR</span>
+                        <span className="text-[#0b57d0] font-bold text-xs">{user.name[0]}</span>
                     </div>
 
-                    <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-100 rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                    <div className="absolute right-0 mt-2 w-56 bg-white border border-gray-100 rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
                         <div className="px-4 py-2 border-b border-gray-50 mb-1">
-                            <p className="text-xs text-gray-400 uppercase tracking-widest font-medium">Ashish Rathi</p>
+                            <p className="text-xs text-gray-400 uppercase tracking-widest font-medium">{user.name}</p>
                         </div>
                         <button className="cursor-pointer w-full text-left px-4 py-2 text-sm font-normal text-gray-600 hover:bg-gray-50 flex items-center gap-3">
                             <PiUserLight className="text-lg" /> My Account
@@ -96,7 +108,7 @@ const Navbar = () => {
                         <button className="cursor-pointer w-full text-left px-4 py-2 text-sm font-normal text-gray-600 hover:bg-gray-50 flex items-center gap-3">
                             <PiGearLight className="text-lg" /> Settings
                         </button>
-                        <button className="cursor-pointer w-full text-left px-4 py-2 text-sm font-normal text-red-500 hover:bg-red-50 flex items-center gap-3 mt-1">
+                        <button onClick={handleLogout} className="cursor-pointer w-full text-left px-4 py-2 text-sm font-normal text-red-500 hover:bg-red-50 flex items-center gap-3 mt-1">
                             <PiSignOutLight className="text-lg" /> Logout
                         </button>
                     </div>

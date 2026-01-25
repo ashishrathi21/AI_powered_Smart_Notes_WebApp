@@ -2,13 +2,18 @@ import React, { useState } from 'react'
 import logo from '../../public/assets/logo.png'
 import Signup from '../components/Auth/Signup'
 import Login from '../components/Auth/Login'
-
+import { MdOutlineKeyboardBackspace } from "react-icons/md";
+import { Link } from 'react-router-dom';
 const Auth = () => {
     const [isLogin, setIsLogin] = useState(false); // Toggle state
 
     return (
         <div className="min-h-screen bg-white selection:bg-black selection:text-white flex flex-col items-center justify-center px-6">
             <div className="w-full max-w-[400px] text-center">
+
+                <div className="flex items-center gap-2 absolute top-5 left-5">
+                    <Link to="/"><p  className="flex items-center gap-2 cursor-pointer text-[#0b57d0]"><MdOutlineKeyboardBackspace />Back</p></Link>
+                </div>
                 
                 {/* Logo & Header */}
                 <div className="flex flex-col items-center mb-10">
